@@ -24,10 +24,9 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroHeight = window.innerHeight * 0.9; // adjust if needed
+      const heroHeight = window.innerHeight * 0.9;
       setScrolled(window.scrollY > heroHeight);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -39,7 +38,7 @@ export default function Navbar() {
       }`}
     >
       <div className="flex items-center justify-between px-6 md:px-10 py-3">
-        {/* Logo */}
+        {/* Logo (untouched) */}
         <Link href="/" className="flex items-center space-x-2 shrink-0">
           <img
             src="/images/homepage/workforce.png"
@@ -135,10 +134,12 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Toggle (changes color on scroll) */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white text-2xl"
+          className={`md:hidden text-2xl transition-colors duration-300 ${
+            scrolled ? "text-black" : "text-white"
+          }`}
           aria-label="Toggle Menu"
         >
           {isOpen ? <FiX /> : <FiMenu />}
@@ -147,8 +148,14 @@ export default function Navbar() {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-white/10 backdrop-blur-lg border-t border-white/20 transition-all duration-300 rounded-b-2xl">
-          <div className="flex flex-col items-center space-y-4 py-6 font-medium text-white">
+        <div
+          className={`md:hidden transition-all duration-300 rounded-b-2xl ${
+            scrolled
+              ? "bg-white border-t border-gray-200 text-black"
+              : "bg-white/10 backdrop-blur-lg border-t border-white/20 text-white"
+          }`}
+        >
+          <div className="flex flex-col items-center space-y-4 py-6 font-medium">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -174,8 +181,12 @@ export default function Navbar() {
                   <Link
                     key={idx}
                     href="#"
-                    className="text-gray-200 hover:text-[#FF7F50]"
                     onClick={() => setIsOpen(false)}
+                    className={`${
+                      scrolled
+                        ? "text-black hover:text-[#FF7F50]"
+                        : "text-gray-200 hover:text-[#FF7F50]"
+                    }`}
                   >
                     {item}
                   </Link>
@@ -184,10 +195,16 @@ export default function Navbar() {
             </details>
 
             <div className="flex flex-col space-y-3 pt-4">
-              <button className="px-6 py-2 border border-white text-white rounded-md font-medium hover:bg-white/10 transition">
+              <button
+                className={`px-6 py-2 rounded-md font-medium transition ${
+                  scrolled
+                    ? "border border-black text-black hover:bg-gray-100"
+                    : "border border-white text-white hover:bg-white/10"
+                }`}
+              >
                 Log In
               </button>
-              <button className="px-6 py-2 bg-[#FF7F50] text-white rounded-md font-medium hover:bg-[#ff946c] transition">
+              <button className="px-6 py-2 bg-[#242424] text-white rounded-md font-medium hover:bg-[#ff946c] transition">
                 Sign Up Now
               </button>
             </div>
