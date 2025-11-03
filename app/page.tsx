@@ -3,7 +3,7 @@
 import Navbar from "./nav";
 import Footer from "./footer";
 import Image from "next/image";
-import HeroImage from "../public/images/homepage/mock-up banner.jpg";
+import HeroImage from "../public/images/homepage/hero.png";
 
 export default function Home() {
   return (
@@ -12,37 +12,90 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative w-full h-[90vh] flex items-center justify-start text-white">
+      <section className="relative w-full h-screen flex flex-col justify-center text-white overflow-hidden">
         {/* Background Image */}
         <Image
           src={HeroImage}
           alt="Hero Background"
           fill
-          className="object-cover -z-10"
+          className="object-cover object-top -z-10"
           priority
         />
 
-        {/* Dark Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70 -z-10" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40 -z-10" />
 
         {/* Hero Content */}
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-6 mt-20 md:mt-0">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-            Build better DevOps, Data, and AI solutions — faster
-          </h1>
-          <p className="max-w-2xl text-sm sm:text-base md:text-lg text-gray-200">
-            There are more than 150,000 highly skilled tech professionals on our roster.
-            Most in largely untapped markets. Ready to be placed quickly and effectively.
-          </p>
+        <div className="max-w-7xl mx-auto w-full px-6 sm:px-10 md:px-16 lg:px-20 mt-24 md:mt-0">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl sm:text-5xl md:text-5xl font-extrabold leading-tight">
+              Where Brilliance <br /> Knows No Borders
+            </h1>
+            <p className="text-base sm:text-lg text-gray-200 mt-5 leading-relaxed">
+              We are the premier destination connecting the world&apos;s elite
+              tech talent with innovative companies. We remove the complexities
+              of global hiring to build a new era of distributed teams.
+            </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center gap-4 mt-4">
-            <button className="px-6 py-3 bg-teal-400 text-black font-semibold rounded-md hover:bg-teal-500 transition duration-300">
-              Hire Talent
-            </button>
-            <button className="px-6 py-3 border border-white text-white font-semibold rounded-md hover:bg-white hover:text-black transition duration-300">
-              What is Adaptive Hiring?
-            </button>
+            {/* Buttons */}
+            <div className="flex flex-wrap items-center gap-4 mt-8">
+              <button className="px-6 py-3 bg-[#009E8E] text-white font-semibold rounded-md hover:bg-[#00B19F] transition duration-300">
+                Hire Verified Talent
+              </button>
+              <button className="px-6 py-3 bg-[#FF7F50] text-white font-semibold rounded-md hover:bg-[#ff946c] transition duration-300">
+                Find My Global Role
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Company Logos Section */}
+        <div className="absolute bottom-4 w-full">
+          <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20 text-white text-left">
+            <h3 className="text-xl md:text-2xl font-semibold mb-6">
+              Top Hiring Companies
+            </h3>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-90">
+              <Image
+                src="/images/homepage/logoipsum.svg"
+                alt="Company Logo"
+                width={140}
+                height={40}
+                className="object-contain opacity-90"
+              />
+
+              <Image
+                src="/images/homepage/logoipsum.svg"
+                alt="Company Logo"
+                width={140}
+                height={40}
+                className="object-contain opacity-90"
+              />
+
+              <Image
+                src="/images/homepage/logoipsum.svg"
+                alt="Company Logo"
+                width={140}
+                height={40}
+                className="object-contain opacity-90"
+              />
+
+              <Image
+                src="/images/homepage/logoipsum.svg"
+                alt="Company Logo"
+                width={140}
+                height={40}
+                className="object-contain opacity-90"
+              />
+
+              <Image
+                src="/images/homepage/logoipsum.svg"
+                alt="Company Logo"
+                width={140}
+                height={40}
+                className="object-contain opacity-90"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -56,7 +109,8 @@ export default function Home() {
           Section 1 Placeholder
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
-          Content for this section will be added once the next mockup is uploaded.
+          Content for this section will be added once the next mockup is
+          uploaded.
         </p>
       </section>
 
