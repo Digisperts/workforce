@@ -2,25 +2,21 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [active, setActive] = useState("");
   const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
-    { name: "For Candidates", href: "#candidates" },
-    { name: "For Employers", href: "#employers" },
-    { name: "Find Jobs", href: "#jobs" },
-    { name: "About Us", href: "#about" },
+    { name: "For Candidates", href: "/for-candidates" },
+    { name: "For Employers", href: "/for-employers" },
+    { name: "Find Jobs", href: "/find-jobs" },
+    { name: "About Us", href: "/about-us" },
   ];
-
-  const handleActive = (name: string) => {
-    setActive(name);
-    setIsOpen(false);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,9 +53,8 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              onClick={() => handleActive(item.name)}
               className={`transition ${
-                active === item.name
+                pathname === item.href
                   ? "text-[#FF7F50]"
                   : scrolled
                   ? "hover:text-[#FF7F50] text-black"
@@ -81,13 +76,12 @@ export default function Navbar() {
               aria-haspopup="true"
               aria-expanded={dropdownOpen}
               className={`flex items-center gap-1 cursor-pointer transition-colors duration-300 ${
-                active === "Resources"
+                pathname.startsWith("/resources")
                   ? "text-[#FF7F50]"
                   : scrolled
                   ? "hover:text-[#FF7F50] text-black"
                   : "hover:text-[#FF7F50] text-white"
               }`}
-              onClick={() => handleActive("Resources")}
             >
               Resources <FiChevronDown className="mt-0.5" />
             </button>
@@ -160,9 +154,8 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                onClick={() => handleActive(item.name)}
                 className={`${
-                  active === item.name
+                  pathname === item.href
                     ? "text-[#FF7F50]"
                     : "hover:text-[#FF7F50]"
                 }`}
@@ -181,7 +174,6 @@ export default function Navbar() {
                   <Link
                     key={idx}
                     href="#"
-                    onClick={() => setIsOpen(false)}
                     className={`${
                       scrolled
                         ? "text-black hover:text-[#FF7F50]"

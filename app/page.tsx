@@ -3,7 +3,6 @@
 import Navbar from "./nav";
 import Footer from "./footer";
 import Image from "next/image";
-import HeroImage from "../public/images/homepage/hero.png";
 
 export default function Home() {
   return (
@@ -15,7 +14,7 @@ export default function Home() {
       <section className="relative w-full h-screen flex flex-col justify-center text-white overflow-hidden">
         {/* Background Image */}
         <Image
-          src={HeroImage}
+          src="/images/homepage/hero.png"
           alt="Hero Background"
           fill
           className="object-cover object-top -z-10"
