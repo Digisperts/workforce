@@ -1,0 +1,31 @@
+name: Sync main branch to personal workforce repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup SSH for secure push
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.ORG_WORKFORCE_SSH_KEY }}" | base64 -d > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          ssh -T git@github.com || true
+
+      - name: Push main to personal repo
+        run: |
+          git config user.name "Digisperts"
+          git config user.email "digisperts@gmail.com"
+          git remote add personal git@github.com:Digisperts/workforce.git
+          git push personal main --force
