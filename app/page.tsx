@@ -106,50 +106,61 @@ export default function Home() {
          --------------------------- */}
       <ScrollFadeSection>
         <section className="py-12 md:py-20 bg-[#F9FAFB]">
-          <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20">
-            <h2 className="text-xl md:text-2xl font-semibold text-[#003399] mb-8">
-              The Problem Vs Our Solution
-            </h2>
+  <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20">
+    
+    <h3 className="text-xl md:text-2xl font-semibold text-[#FF7F50] mb-8">
+      The Problem <span className="text-[#5C5C5C]"> Vs </span>  <span className="text-[#339999]"> Our Solution </span>
+    </h3>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Left: Orange card */}
-              <div className="bg-white shadow-md rounded-lg overflow-hidden">
-                <div className="p-6 md:p-8">
-                  <h3 className="text-lg md:text-xl font-semibold text-[#FF7F50] mb-4">
-                    The World of Work Has Changed. Access to Talent Has Not Kept Up.
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    Brilliance is distributed globally, but opportunity is not.
-                    Ambitious tech professionals are frustrated by the complexities
-                    and lack of transparency in international job hunting.
-                    Simultaneously, forward-thinking companies struggle to
-                    efficiently source, vet, and hire the best talent,
-                    regardless of location.
-                  </p>
-                </div>
+    <div className="flex flex-col gap-10">
 
-                {/* small image area on the right of the orange box on large screens */}
-                <div className="hidden md:block h-40 bg-[url('/images/homepage/section-the-problem.jpg')] bg-cover bg-center" />
-              </div>
+      {/* ORANGE ROW — full width */}
+      <div className="bg-[#E87449] text-white shadow-md rounded-lg overflow-hidden flex flex-col md:flex-row w-full h-[293px]">
 
-              {/* Right: Teal card */}
-              <div className="bg-[#009E8E] text-white rounded-lg shadow-md overflow-hidden">
-                <div className="p-6 md:p-8">
-                  <h3 className="text-lg md:text-xl font-semibold mb-4">
-                    Digisperts Workforce is the Catalyst for Connection.
-                  </h3>
-                  <p className="leading-relaxed">
-                    We are the tech-talent platform that combines skill verification,
-                    AI hiring tools, and global hiring toolkits. We give employers fast
-                    access to top engineers while giving candidates a trusted path
-                    to premier international work.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </ScrollFadeSection>
+        {/* Text left */}
+        <div className="p-6 md:p-10 flex-1">
+          <h3 className="text-lg md:text-xl font-semibold text-[#FF7F50] mb-4">
+            The World of Work Has Changed. Access to Talent Has Not Kept Up.
+          </h3>
+          <p className="text-white leading-relaxed">
+            Brilliance is distributed globally, but opportunity is not.
+            Ambitious tech professionals are frustrated by the complexities
+            and lack of transparency in international job hunting.
+            Simultaneously, forward-thinking companies struggle to
+            efficiently source, vet, and hire the best talent,
+            regardless of location.
+          </p>
+        </div>
+
+        {/* Image right */}
+        <div className="hidden md:block w-[45%] bg-[url('/images/homepage/orange-image.png')] bg-cover bg-center" />
+      </div>
+
+      {/* TEAL ROW — full width */}
+      <div className="bg-[#009E8E] text-white shadow-md rounded-lg overflow-hidden flex flex-col md:flex-row w-full h-[293px]">
+
+        {/* Image left */}
+        <div className="hidden md:block w-[45%] bg-[url('/images/homepage/teal-image.png')] bg-cover bg-center" />
+
+        {/* Text right */}
+        <div className="p-6 md:p-10 flex-1">
+          <h3 className="text-lg md:text-xl font-semibold mb-4">
+            Digisperts Workforce is the Catalyst for Connection.
+          </h3>
+          <p className="leading-relaxed">
+            We are the tech-talent platform that combines skill verification,
+            AI hiring tools, and global hiring toolkits. We give employers fast
+            access to top engineers while giving candidates a trusted path
+            to premier international work.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+</ScrollFadeSection>
 
       {/* ---------------------------
             At Our Core (three cards)
@@ -166,33 +177,48 @@ export default function Home() {
               <div className="bg-white rounded-lg shadow p-6 border border-gray-100">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-md bg-[#F1FAF9] mb-4">
                   {/* icon placeholder */}
-                  <div className="w-5 h-5 bg-[#009E8E] rounded-sm" />
+                  <Image
+                  src="/images/homepage/user-icon.png"
+                  alt="User Icon"
+                  width={24}
+                  height={24}
+                  />
                 </div>
                 <h4 className="text-lg font-semibold mb-2">Verified Brilliance</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   Our integrated skills assessments and rich, detailed profiles mean
                   you can connect with verified, high-quality candidates and employers.
-                  Companies receive a "Verified Global Employer" badge to build trust.
+                  Companies receive a &rdquo;Verified Global Employer&rdquo; badge to build trust.
                 </p>
               </div>
 
               {/* Card 2 */}
               <div className="bg-white rounded-lg shadow p-6 border border-gray-100">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-md bg-[#F1FAF9] mb-4">
-                  <div className="w-5 h-5 bg-[#009E8E] rounded-sm" />
+                  <Image
+                  src="/images/homepage/verified.png"
+                  alt="Verified Brilliance Icon"
+                  width={24}
+                  height={24}
+                  />
                 </div>
                 <h4 className="text-lg font-semibold mb-2">Radical Transparency</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   We are designed to provide clarity. Candidates can view the
-                  real-time status of all submitted applications — from "Application viewed"
-                  to "Offer". We believe in an open and empowering process for everyone.
+                  real-time status of all submitted applications — from &rdquo;Application viewed&rdquo;
+                  to &rdquo;Offer&rdquo;. We believe in an open and empowering process for everyone.
                 </p>
               </div>
 
               {/* Card 3 */}
               <div className="bg-white rounded-lg shadow p-6 border border-gray-100">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-md bg-[#F1FAF9] mb-4">
-                  <div className="w-5 h-5 bg-[#009E8E] rounded-sm" />
+                  <Image
+                  src="/images/homepage/website.png"
+                  alt="Website Icon"
+                  width={24}
+                  height={24}
+                  />
                 </div>
                 <h4 className="text-lg font-semibold mb-2">A Global Hiring Toolkit</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
