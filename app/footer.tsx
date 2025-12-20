@@ -5,7 +5,7 @@ import { FaTwitter, FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#003636] w-full -mt-43 pt-40" style={{ minHeight: 320 }}>
+    <footer className="relative bg-[#003636] w-full -mt-50 pt-50" style={{ minHeight: 320 }}>
       <div className="relative z-20 max-w-6xl mx-auto flex flex-col md:flex-row items-start justify-between py-17 px-4">
 
         {/* Contact / Social Links */}
