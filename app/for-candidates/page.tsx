@@ -7,6 +7,7 @@ import Link from "next/link";
 import ScrollFadeSection from "../components/ScrollFadeSection";
 
 export default function CandidatesPage() {
+  
   return (
     <main className="min-h-screen flex flex-col scroll-smooth">
       {/* Navbar */}
