@@ -114,15 +114,15 @@ export default function Home() {
 
     <div className="flex flex-col gap-10">
 
-      {/* ORANGE ROW — full width */}
+      {/* ORANGE ROW*/}
       <div className="bg-[#E87449] text-white shadow-md rounded-lg overflow-hidden flex flex-col md:flex-row w-full h-[293px]">
 
         {/* Text left */}
         <div className="p-6 md:p-10 flex-1">
-          <h3 className="text-lg md:text-xl font-semibold text-[#FF7F50] mb-4">
+          <h3 className="text-lg md:text-xl font-semibold text-[#FEFEFE] mb-4">
             The World of Work Has Changed. Access to Talent Has Not Kept Up.
           </h3>
-          <p className="text-white leading-relaxed">
+          <p className="text-[#FEFEFE] leading-relaxed">
             Brilliance is distributed globally, but opportunity is not.
             Ambitious tech professionals are frustrated by the complexities
             and lack of transparency in international job hunting.
@@ -330,7 +330,7 @@ export default function Home() {
       <ScrollFadeSection>
         <section className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20 text-center">
-            <h3 className="text-xl md:text-2xl font-semibold text-[#003399] mb-4">
+            <h3 className="text-xl md:text-2xl font-semibold text-[#005B5B] mb-4">
               Join a Global Community
             </h3>
 
@@ -370,48 +370,54 @@ export default function Home() {
           </div>
         </section>
       </ScrollFadeSection>
-{/* Pre Footer Section */}
-      <section className="relative w-full flex flex-col items-center bg-transparent pb-0 mb-0 -mb-32 z-30">
-        <div className="w-full max-w-6xl mx-auto flex flex-col items-center px-4 lg:px-0">
-          <div className="relative w-full h-[280px] md:h-[370px] flex items-center justify-center">
-            <Image
-              src="/images/footer.jpg"
-              alt="Footer Background"
-              fill
-              className="object-cover z-0"
-              style={{ objectPosition: "center" }}
-              priority
-            />
-            <div
-              className="absolute left-0 top-0 w-full h-full flex items-center"
-              style={{ zIndex: 2 }}
-            >
-              <div className="p-6 md:p-27 max-w-full md:max-w-4xl text-white ml-8 mt-1 rounded-lg">
-                <ScrollFadeSection>
-                  <div className="font-extrabold text-2xl md:text-3xl mb-2 leading-tight">
-                    Ready to Build Your Future?
-                  </div>
-                  <div className="text-sm md:text-base font-normal mb-5">
-                    Let&apos;s discuss how a custom software solution can help
-                    you overcome inefficiencies and drive your business forward.
-                  </div>
-                  <div className="flex gap-3 flex-wrap">
-                    <Link
-                      href=""
-                      className="border bg-[#003399] border-gray-800 px-4 py-2 text-white font-bold text-sm hover:bg-white hover:text-[#233876] transition-colors duration-200 inline-block shadow"
-                      style={{ boxShadow: "4px 4px 4px 0px #00000040" }}
-                    >
-                      TALK TO AN EXPERT
-                    </Link>
-                  </div>
-                  </ScrollFadeSection>
-              </div>
-            </div>
-            <div className="absolute inset-0 bg-black/70" />
-          </div>
-        </div>
-      </section>
+ {/* Pre Footer Section */}
+<section className="relative w-full flex flex-col items-center -mt-12 z-30">
+  <div className="w-full max-w-6xl mx-auto px-4 lg:px-0">
 
+    {/* CARD — white background stays here */}
+    <div className="relative w-full h-[280px] md:h-[360px] rounded-2xl overflow-hidden shadow-2xl bg-white">
+
+      <Image
+        src="/images/prefooter-banner.png"
+        alt="PreFooter Background"
+        fill
+        className="object-cover"
+        priority
+      />
+
+      <div className="absolute inset-0 flex items-center">
+        <div className="p-6 md:p-10 max-w-4xl ml-6 md:ml-12">
+          <ScrollFadeSection>
+            <h3 className="font-extrabold text-3xl mb-2 text-[#333]">
+              Join the Future of Global Work.
+            </h3>
+
+            <p className="text-xsm md:text-base mb-5 text-[#333]">
+              Whether you are a developer seeking a premier international role or a company building a world-class distributed team, Digisperts Workforce is your destination.
+            </p>
+
+            <div className="flex gap-4">
+              <Link
+                href=""
+                className="px-6 py-3 bg-[#008080] text-[#FEFEFE] rounded-md font-semibold shadow"
+              >
+                Post a Job for Free
+              </Link>
+
+              <Link
+                href=""
+                className="px-6 py-3 bg-[#FF7F50] text-[#FEFEFE] rounded-md font-semibold shadow"
+              >
+                Start Your Journey
+              </Link>
+            </div>
+          </ScrollFadeSection>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
       {/* Footer */}
       <Footer />
     </main>
