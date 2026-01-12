@@ -1,5 +1,5 @@
 "use client";
-
+import { useRef } from "react";
 import Navbar from "./nav";
 import Footer from "./footer";
 import Image from "next/image";
@@ -7,6 +7,89 @@ import Link from "next/link";
 import ScrollFadeSection from "./components/ScrollFadeSection"
 
 export default function Home() {
+
+const testimonials = [
+  {
+    icon: "/images/homepage/global_icon.png",
+    location: "Global Tech Inc.",
+    text:
+      "Finally, a platform that understands the complexities of hiring engineers globally. The salary benchmarking tool alone is a game-changer.",
+    avatar: "/images/homepage/salami.png",
+    name: "Salami David",
+    role: "Social Media Manager",
+  },
+  {
+    icon: "/images/homepage/nigeria.png",
+    location: "Lagos, Nigeria",
+    text:
+      "The application tracker is incredible. For the first time, I felt respected and informed during my job search.",
+    avatar: "/images/homepage/mercy.png",
+    name: "Olanrewaju Mercy",
+    role: "Senior Software Engineer",
+  },
+  {
+    icon: "/images/homepage/global_icon.png",
+    location: "Lagos, Nigeria",
+    text:
+      "The application tracker is incredible. For the first time, I felt respected and informed during my job search.",
+    avatar: "/images/homepage/mercy.png",
+    name: "Olanrewaju Mercy",
+    role: "Senior Designer",
+  },
+  {
+  icon: "/images/homepage/nigeria.png",
+    location: "Global Tech Inc.",
+    text:
+      "Finally, a platform that understands the complexities of hiring engineers globally. The salary benchmarking tool alone is a game-changer.",
+    avatar: "/images/homepage/salami.png",
+    name: "Salami David",
+    role: "Hiring Manager",
+  },
+];
+
+const sliderRef = useRef<HTMLDivElement>(null);
+
+const scrollLeft = () => {
+  if (!sliderRef.current) return;
+  sliderRef.current.scrollBy({
+    left: -720, // 2 cards (340 * 2 + gap)
+    behavior: "smooth",
+  });
+};
+
+const scrollRight = () => {
+  if (!sliderRef.current) return;
+  sliderRef.current.scrollBy({
+    left: 720,
+    behavior: "smooth",
+  });
+};
+
+const roles = [
+  "Software Engineer",
+  "Cybersecurity Analyst",
+  "Full-Stack Developer",
+  "Cloud Engineer",
+  "Product Manager",
+  "UI/UX Designer",
+  "Network Engineer",
+  "AI Engineer",
+  "Data Scientist",
+  "DevOps Engineer",
+];
+
+const companies = [
+  "/images/homepage/meta.png",
+  "/images/homepage/microsoft.png",
+  "/images/homepage/nvidia.png",
+  "/images/homepage/oracle.png",
+  "/images/homepage/samsung.png",
+  "/images/homepage/tesla.png",
+  "/images/homepage/microsoft2.png",
+  "/images/homepage/google2.png",
+];
+
+
   return (
     <main className="min-h-screen flex flex-col scroll-smooth">
       {/* Navbar */}
@@ -168,7 +251,7 @@ export default function Home() {
       <ScrollFadeSection>
         <section className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20">
-            <h2 className="text-2xl md:text-3xl font-semibold text-[#003399] mb-8">
+            <h2 className="text-2xl md:text-3xl font-semibold text-[#005B5B] mb-8">
               At Our Core
             </h2>
 
@@ -180,8 +263,8 @@ export default function Home() {
                   <Image
                   src="/images/homepage/user-icon.png"
                   alt="User Icon"
-                  width={24}
-                  height={24}
+                  width={30}
+                  height={30}
                   />
                 </div>
                 <h4 className="text-lg font-semibold mb-2">Verified Brilliance</h4>
@@ -198,8 +281,8 @@ export default function Home() {
                   <Image
                   src="/images/homepage/verified.png"
                   alt="Verified Brilliance Icon"
-                  width={24}
-                  height={24}
+                  width={30}
+                  height={30}
                   />
                 </div>
                 <h4 className="text-lg font-semibold mb-2">Radical Transparency</h4>
@@ -216,8 +299,8 @@ export default function Home() {
                   <Image
                   src="/images/homepage/website.png"
                   alt="Website Icon"
-                  width={24}
-                  height={24}
+                  width={30}
+                  height={30}
                   />
                 </div>
                 <h4 className="text-lg font-semibold mb-2">A Global Hiring Toolkit</h4>
@@ -231,145 +314,215 @@ export default function Home() {
         </section>
       </ScrollFadeSection>
 
-      {/* -----------------------------------------
-          A Platform Built on Trust and Transparency
-         ----------------------------------------- */}
+      {/* ---- A Platform Built on Trust and Transparency----- */}
       <ScrollFadeSection>
-        <section className="py-12 md:py-20 bg-[#FFF7F4]">
-          <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20 text-center">
-            <div className="inline-flex items-center gap-4 mb-6">
-              <button className="px-4 py-2 text-sm bg-[#003399] text-white rounded-full">
-                For Global Talent
-              </button>
-              <button className="px-4 py-2 text-sm bg-white text-[#003399] border border-[#003399] rounded-full">
-                For Global Organizations
-              </button>
-            </div>
+        
+  <section className="relative w-full h-screen pt-5 pb-40 overflow-hidden">
+  {/* BACKGROUND IMAGE (includes globe) */}
+  <div className="absolute inset-0 -z-10 flex items-end justify-center">
+    <div
+      className="
+        w-full h-full
+        bg-[url('/images/homepage/platformbg.png')]
+        bg-no-repeat
+        bg-cover
+        bg-bottom
+        
+      "
+    />
 
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              A Platform Built on Trust and Transparency
-            </h3>
+    {/* soft overlay */}
+    <div className="absolute inset-0 bg-white/60" />
+  </div>
+  {/* CONTENT */}
+  <div className="relative max-w-7xl mx-auto px-2 sm:px-10 md:px-16 lg:px-20 text-center">
+    {/* toggle pills */}
+    <div className="inline-flex items-center gap-2 bg-[#EBEBEB] shadow-md rounded-full p-1 mb-8">
+      <button className="px-5 py-2 text-sm rounded-full bg-[#333333] text-[#FFFFFF]">
+        For Global Talent
+      </button>
+      <button className="px-5 py-2 text-sm rounded-full text-[#003399]">
+        For Global Organizations
+      </button>
+    </div>
 
-            <p className="max-w-3xl mx-auto text-gray-700 mb-10">
-              Your career, empowered. Land your dream international role with a platform
-              built for you. Experience a transparent process where you can track your
-              application's status in real-time, showcase your verified skills, and connect
-              with a global network of mentors to accelerate your growth.
-            </p>
+    <h2 className="text-3xl md:text-4xl font-bold text-[#333333] mb-4">
+      A Platform Built on <br className="hidden sm:block" />
+      Trust and Transparency
+    </h2>
 
-            {/* decorative globe semicircle */}
-            <div className="flex justify-center">
-              <div className="w-72 h-36 md:w-96 md:h-44 rounded-t-full bg-gradient-to-t from-[#dff6f2] to-white shadow-inner" />
-            </div>
-          </div>
-        </section>
+    <p className="max-w-3xl mx-auto text-[#5C5C5C] text-sm leading-relaxed mb-2">
+      Your career, empowered. Land your dream international role with a platform <br /> built for you. Experience a transparent process where you can track your <br /> 
+      application&aposs status in real-time , showcase your verified skills , and connect <br /> with a global network of mentors to accelerate your growth.
+    </p>
+
+    {/* CTA */}
+    <div className="flex justify-center gap-4">
+      <button className="px-3 py-3 rounded-md bg-[#FF7F50] text-white font-semibold hover:bg-[#00B19F] transition">
+        Explore Tech Careers
+      </button>
+  
+    </div>
+  </div>
+</section>
+
       </ScrollFadeSection>
 
-      {/* -----------------------------------------
-          Testimonials / What Hired Tech Professionals Says
-         ----------------------------------------- */}
+      {/* ---What Hired Tech Professionals Says--- */}
       <ScrollFadeSection>
-        <section className="py-12 md:py-20 bg-[#005B5B] text-white">
-          <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-6">
-              What Hired Tech Professionals Says
-            </h3>
+  <section className="py-20 bg-[#005B5B] text-white">
+    <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20">
+    
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-              {/* left control area */}
-              <div className="flex items-center justify-center">
-                <div className="space-x-3">
-                  <button className="w-10 h-10 bg-white/10 rounded-full" aria-hidden>
-                    ‹
-                  </button>
-                  <button className="w-10 h-10 bg-white/10 rounded-full" aria-hidden>
-                    ›
-                  </button>
-                </div>
-              </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        {/* controls */}
+        <div className="flex flex-col justify-between h-full">
 
-              {/* testimonial card 1 */}
-              <div className="bg-white rounded-lg p-6 text-gray-800 shadow-md">
-                <div className="text-sm text-gray-500 mb-4">Global Tech Inc.</div>
-                <div className="text-base mb-4">
-                  “Finally, a platform that understands the complexities of hiring
-                  engineers globally. The salary benchmarking tool alone is a game-changer.”
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-200" />
-                  <div>
-                    <div className="font-semibold">Salami David</div>
-                    <div className="text-sm text-gray-500">Hiring Manager</div>
-                  </div>
-                </div>
-              </div>
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+        What Hired Tech <br className="hidden sm:block" />
+        Professionals Says
+      </h2>
+          <div className="flex gap-4 mt-12 lg:mt-auto">
+             <button
+  onClick={scrollLeft}
+  className="w-11 h-11 rounded-full border border-white/30 text-5xl text-gray-900 bg-white flex items-center justify-center hover:bg-white/20 transition"
+>
+  ‹
+</button>
 
-              {/* testimonial card 2 */}
-              <div className="bg-white rounded-lg p-6 text-gray-800 shadow-md">
-                <div className="text-sm text-gray-500 mb-4">Lagos, Nigeria</div>
-                <div className="text-base mb-4">
-                  “The application tracker is incredible. For the first time, I felt
-                  respected and informed during my job search.”
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-200" />
-                  <div>
-                    <div className="font-semibold">Olanrewaju Mercy</div>
-                    <div className="text-sm text-gray-500">Senior Software Engineer</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+<button
+  onClick={scrollRight}
+  className="w-11 h-11 rounded-full border border-white/30 text-5xl text-gray-900 bg-white flex items-center justify-center hover:bg-white/20 transition"
+>
+  ›
+</button>
+
           </div>
-        </section>
-      </ScrollFadeSection>
+        </div>
 
-      {/* -----------------------------------------
-          Connect with the Vanguard of Tech
-         ----------------------------------------- */}
+      {/* RIGHT SIDE — cards */}
+<div ref={sliderRef}
+  className="flex gap-8 overflow-x-hidden scroll-smooth md:col-span-2"
+  style={{ maxWidth: "720px" }}>
+  {testimonials.map((t, index) => (
+    <div
+      key={index}
+      className="bg-white text-gray-800 rounded-xl p-8 shadow-lg min-h-[360px] w-[340px] flex flex-col justify-between shrink-0"
+    >
+      {/* ICON + LOCATION */}
+      <div>
+        <Image
+          src={t.icon}
+          alt=""
+          width={32}
+          height={32}
+          className="mb-3"
+        />
+
+        <p className="text-sm text-gray-500 mb-4">
+          {t.location}
+        </p>
+
+        <p className="leading-relaxed mb-6">
+          “{t.text}”
+        </p>
+      </div>
+
+      {/* DIVIDER */}
+      <hr className="my-4 border-gray-200" />
+
+      {/* PROFILE */}
+      <div className="flex items-center gap-3">
+        <Image
+          src={t.avatar}
+          alt={t.name}
+          width={44}
+          height={44}
+          className="rounded-full object-cover"
+        />
+
+        <div>
+          <p className="font-semibold">{t.name}</p>
+          <p className="text-sm text-gray-500">{t.role}</p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+      </div>
+    </div>
+  </section>
+</ScrollFadeSection>
+
       <ScrollFadeSection>
-        <section className="py-12 md:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20 text-center">
-            <h3 className="text-xl md:text-2xl font-semibold text-[#005B5B] mb-4">
-              Join a Global Community
-            </h3>
+  <section className="py-20 bg-white overflow-hidden">
+    <div className="max-w-6xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20 text-center">
+      <h3 className="text-lg font-semibold text-[#005B5B] mb-3">
+        Join a Global Community
+      </h3>
 
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Connect with the Vanguard of Tech.
-            </h2>
+      <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        Connect with the Vanguard of Tech.
+      </h2>
 
-            <p className="max-w-3xl mx-auto text-gray-700 mb-8">
-              Digisperts Workforce is more than a platform; it’s an ecosystem for
-              the world’s most ambitious tech professionals and the innovative
-              companies building the future. We are the leading destination where
-              elite tech talent and forward-thinking companies connect seamlessly.
-            </p>
+      <p className="max-w-3xl mx-auto text-gray-600 mb-14">
+        Digisperts Workforce is more than a platform,it&apos;s an ecosystem for the world&apos;s most ambitious tech professionals and the innovative companies building the future. 
+        We are the leading destination where elite tech talent and forward-thinking companies connect seamlessly
+      </p>
+    </div>
 
-            {/* tag chips */}
-            <div className="flex flex-wrap justify-center gap-3">
-              {[
-                "Software Engineer",
-                "Cybersecurity Analyst",
-                "Full-Stack Developer",
-                "Cloud Engineer",
-                "Product Manager",
-                "UI/UX Designer",
-                "Network Engineer",
-                "AI Engineer",
-                "Data Scientist",
-                "DevOps Engineer",
-              ].map((t) => (
-                <span
-                  key={t}
-                  className="text-sm px-3 py-2 bg-gray-100 text-gray-700 rounded-full shadow-sm"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
+    {/* ROW 1 — JOB ROLES */}
+    <div className="relative overflow-hidden mb-6">
+      <div className="marquee gap-4">
+        {[...roles, ...roles].map((role, i) => (
+          <span
+            key={i}
+            className="px-5 py-2 text-sm border border-[#FFD7C9] rounded-full text-gray-700 whitespace-nowrap"
+          >
+            {role}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    {/* ROW 2 — COMPANY LOGOS */}
+    <div className="relative overflow-hidden mb-6">
+      <div className="marquee marquee-slow gap-6">
+        {[...companies, ...companies].map((logo, i) => (
+          <div
+            key={i}
+            className="w-32 h-16 flex items-center justify-center border border-[#B0D8D8] rounded-xl bg-white"
+          >
+            <Image
+              src={logo}
+              alt="Company logo"
+              width={100}
+              height={40}
+              className="object-contain"
+            />
           </div>
-        </section>
-      </ScrollFadeSection>
+        ))}
+      </div>
+    </div>
+
+    {/* ROW 3 */}
+    <div className="relative overflow-hidden">
+      <div className="marquee gap-4">
+        {[...roles, ...roles].map((role, i) => (
+          <span
+            key={i}
+            className="px-5 py-2 text-sm border border-[#FFD7C9] rounded-full text-gray-700 whitespace-nowrap"
+          >
+            {role}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+</ScrollFadeSection>
+
+
+
  {/* Pre Footer Section */}
 <section className="relative w-full flex flex-col items-center -mt-12 z-30">
   <div className="w-full max-w-6xl mx-auto px-4 lg:px-0">
