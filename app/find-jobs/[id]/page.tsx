@@ -165,7 +165,7 @@ export default function JobDetailsPage() {
 
 <div className="mt-20">
   <div className="grid md:grid-cols-3 gap-8">
-        {jobs.slice(0, 3).map((job) => (
+        {jobs?.slice(0, 3).map((job) => (
           <JobCards
           key={job.id}
           id={job.id}
