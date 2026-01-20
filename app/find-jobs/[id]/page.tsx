@@ -1,26 +1,22 @@
 "use client";
-import { useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ScrollFadeSection from "../../components/ScrollFadeSection";
-import { FiArchive, FiHeart, FiUsers, FiGlobe, FiClock, FiBriefcase } from "react-icons/fi";
+import { FiArchive, FiHeart,  } from "react-icons/fi";
 import JobCards from "../.././components/JobCards";
 import Footer from "../../footer";
 
+
+const postedDate = new Date("2025-01-01");
+const daysAgo = Math.floor((Date.now() - postedDate.getTime()) / (1000 * 60 * 60 * 24));
 export default function JobDetailsPage() {
-  const postedDate = new Date("2025-01-01");
 
-  const daysAgo = useMemo(() => {
-    return Math.floor(
-      (Date.now() - postedDate.getTime()) / (1000 * 60 * 60 * 24)
-    );
-  }, []);
   const jobs = Array.from({ length: 9 }, (_, i) => ({
-  id: `${i + 1}`,
-  title: "Frontend React Developer",
-  company: "Amazon",
-}));
-
+    id: `${i + 1}`,
+    title: "Frontend React Developer",
+    company: "Amazon",
+  }));
+  
 
   return (
     <section className="bg-[#F7F7F7] py-16 px-6">
@@ -30,7 +26,7 @@ export default function JobDetailsPage() {
           className="inline-flex items-center mb-6 text-3xl font-extrabold text-[#003636] hover:opacity-80"
           >
             ←
-            </Link>
+          </Link>
       <div className="grid md:grid-cols-3 gap-10">
 
         {/* LEFT CARD */}
@@ -39,7 +35,7 @@ export default function JobDetailsPage() {
           {/* Top row */}
           <div className="flex justify-between items-center mb-6">
             <p className="text-xs text-gray-500">
-              Posted {daysAgo} days ago
+               Posted {daysAgo} days ago
             </p>
 
             <div className="flex gap-3 text-gray-500">

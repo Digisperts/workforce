@@ -14,7 +14,7 @@ export default function CandidatesPage() {
       <Navbar />
 
       {/* HERO */}
-      <section className="relative w-full h-screen -mt-0">
+      <section className="relative w-full h-screen mt-0">
         {/* Placeholder background image */}
         <div className="absolute inset-0 -z-10">
           <Image
@@ -109,7 +109,7 @@ export default function CandidatesPage() {
               </div>
 
               {/* Label */}
-              <p className="mt-3 text-sm font-medium text-gray-700 max-w-[80px] leading-tight">
+              <p className="mt-3 text-sm font-medium text-gray-700 max-w-20 leading-tight">
                 {step.label}
               </p>
             </div>
@@ -181,7 +181,7 @@ export default function CandidatesPage() {
           2. <p className="text-[#767676] text-lg">Verify Your Brilliance</p>
         </div>
         <p className="text-gray-600 text-sm">
-          Move beyond the CV. Take free skills tests to earn a "Skills Assessed" badge on your profile, proving your expertise to top employers before the first interview.
+          Move beyond the CV. Take free skills tests to earn a &rdquo;Skills Assessed&rdquo; badge on your profile, proving your expertise to top employers before the first interview.
         </p>
       </div>
 
@@ -191,7 +191,7 @@ export default function CandidatesPage() {
           3. <p className="text-[#767676] text-lg">Track Opportunities</p>
         </div>
         <p className="text-gray-600 text-sm">
-          Experience radical transparency. Our platform allows you to view the real-time status of every application you submit. You'll know exactly where you stand, from the moment your application is viewed to when an offer is made.
+          Experience radical transparency. Our platform allows you to view the real-time status of every application you submit. You&apos;ll know exactly where you stand, from the moment your application is viewed to when an offer is made.
         </p>
       </div>
  

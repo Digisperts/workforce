@@ -22,7 +22,7 @@ export default function FindJobsPage() {
       <Navbar />
 
       {/* HERO */}
-            <section className="relative w-full h-screen -mt-0">
+            <section className="relative w-full h-screen mt-0">
               {/* Placeholder background image */}
               <div className="absolute inset-0 -z-10">
                 <Image
