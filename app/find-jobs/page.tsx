@@ -9,6 +9,13 @@ import JobCards from "../components/JobCards";
 
 
 export default function FindJobsPage() {
+
+  const jobs = Array.from({ length: 9 }, (_, i) => ({
+  id: `${i + 1}`,
+  title: "Frontend React Developer",
+  company: "Amazon",
+}));
+
   return (
     <main className="min-h-screen flex flex-col scroll-smooth">
       {/* Navbar */}
@@ -94,22 +101,33 @@ export default function FindJobsPage() {
       </h2>
 
       <div className="grid md:grid-cols-3 gap-8">
-        {[...Array(6)].map((_, i) => (
-          <JobCards key={i} />
-        ))}
+        {jobs.slice(0, 6).map((job) => (
+          <JobCards
+          key={job.id}
+          id={job.id}
+          title={job.title}
+          company={job.company}
+          />
+          ))}
       </div>
     </div>
 
     {/* Recommended */}
     <div className="mt-24">
-      <h2 className="text-xl font-semibold text-[#003636] mb-8">
+      <h2 className="text-xl font-semibold text-[#81a3a3] mb-8">
         Recommended for You
       </h2>
 
       <div className="grid md:grid-cols-3 gap-8">
-        {[...Array(9)].map((_, i) => (
-          <JobCards key={i} />
-        ))}
+        {jobs.map((job) => (
+          <JobCards
+          key={job.id}
+          id={job.id}
+          title={job.title}
+          company={job.company}
+          />
+          ))}
+
       </div>
 
       {/* Pagination */}

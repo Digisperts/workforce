@@ -1,16 +1,26 @@
 "use client";
-
+import { useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ScrollFadeSection from "../../components/ScrollFadeSection";
 import { FiArchive, FiHeart, FiUsers, FiGlobe, FiClock, FiBriefcase } from "react-icons/fi";
+import JobCards from "../.././components/JobCards";
 import Footer from "../../footer";
 
 export default function JobDetailsPage() {
   const postedDate = new Date("2025-01-01");
-  const daysAgo = Math.floor(
-    (Date.now() - postedDate.getTime()) / (1000 * 60 * 60 * 24)
-  );
+
+  const daysAgo = useMemo(() => {
+    return Math.floor(
+      (Date.now() - postedDate.getTime()) / (1000 * 60 * 60 * 24)
+    );
+  }, []);
+  const jobs = Array.from({ length: 9 }, (_, i) => ({
+  id: `${i + 1}`,
+  title: "Frontend React Developer",
+  company: "Amazon",
+}));
+
 
   return (
     <section className="bg-[#F7F7F7] py-16 px-6">
@@ -155,6 +165,19 @@ export default function JobDetailsPage() {
   </div>
 </div>
 </div> 
+</div>
+
+<div className="mt-20">
+  <div className="grid md:grid-cols-3 gap-8">
+        {jobs.slice(0, 3).map((job) => (
+          <JobCards
+          key={job.id}
+          id={job.id}
+          title={job.title}
+          company={job.company}
+          />
+          ))}
+      </div>
 </div>
 
 {/* SECTION 6 — Explore More Articles */}
