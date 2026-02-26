@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 
@@ -36,9 +37,11 @@ export default function Navbar() {
       <div className="flex items-center justify-between px-6 md:px-10 py-3">
         {/* Logo (untouched) */}
         <Link href="/" className="flex items-center space-x-2 shrink-0">
-          <img
+          <Image
             src="/images/homepage/workforce.png"
             alt="Workforce Logo"
+            width={140}
+            height={40}
             className="h-8 md:h-10 w-auto object-contain"
           />
         </Link>
@@ -114,18 +117,23 @@ export default function Navbar() {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center space-x-4 transition-colors duration-300">
-          <button
-            className={`px-5 py-2 rounded-md font-medium transition ${
-              scrolled
-                ? "border border-black text-black hover:bg-gray-100"
-                : "border border-white text-white hover:bg-white/10"
+          <Link
+          href="/auth/login"
+          className={`px-5 py-2 rounded-md font-medium transition ${
+            scrolled
+            ? "border border-black text-black hover:bg-gray-100"
+            : "border border-white text-white hover:bg-white/10"
             }`}
+            >
+              Log In
+          </Link>
+          
+          <Link
+          href="/auth/get-started"
+          className="px-5 py-2 bg-[#242424] text-white rounded-md font-medium hover:bg-[#ff946c] transition"
           >
-            Log In
-          </button>
-          <button className="px-5 py-2 bg-[#242424] text-white rounded-md font-medium hover:bg-[#ff946c] transition">
             Sign Up Now
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Toggle (changes color on scroll) */}
@@ -187,18 +195,22 @@ export default function Navbar() {
             </details>
 
             <div className="flex flex-col space-y-3 pt-4">
-              <button
-                className={`px-6 py-2 rounded-md font-medium transition ${
-                  scrolled
-                    ? "border border-black text-black hover:bg-gray-100"
-                    : "border border-white text-white hover:bg-white/10"
-                }`}
+              <Link
+              href="/auth/login"
+              className={`px-6 py-2 rounded-md font-medium transition ${
+                scrolled
+                ? "border border-black text-black hover:bg-gray-100"
+                : "border border-white text-white hover:bg-white/10"
+              }`}
               >
                 Log In
-              </button>
-              <button className="px-6 py-2 bg-[#242424] text-white rounded-md font-medium hover:bg-[#ff946c] transition">
+              </Link>
+              <Link
+              href="/auth/get-started"
+              className="px-6 py-2 bg-[#242424] text-white rounded-md font-medium hover:bg-[#ff946c] transition"
+              >
                 Sign Up Now
-              </button>
+              </Link>
             </div>
           </div>
         </div>
