@@ -19,7 +19,7 @@ export default function GetStartedPage() {
         <button
           onClick={() => setAccountType("employer")}
           className={`px-5 py-2 text-sm rounded-full transition ${
-            accountType === "employer"
+            accountType === "candidate"
               ? "bg-[#E87449] text-white"
               : "text-gray-600"
           }`}
@@ -42,8 +42,8 @@ export default function GetStartedPage() {
 
     {/* PROGRESS DOTS */}
     <div className="flex justify-center gap-2 mb-8">
+      <div className="w-3 h-3 rounded-full  bg-gray-300" />
       <div className="w-3 h-3 rounded-full bg-[#E87449]" />
-      <div className="w-3 h-3 rounded-full bg-gray-300" />
     </div>
 
     {/* HEADING */}
