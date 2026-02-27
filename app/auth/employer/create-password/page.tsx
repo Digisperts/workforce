@@ -14,8 +14,8 @@ export default function CreatePassword() {
 
         {/* Back Button */}
         <Link
-          href="/auth/get-started"
-          className="inline-flex items-center justify-center w-10 h-10 rounded-b-md bg-[#339999] text-white mb-6"
+          href="/auth/employer/get-started"
+          className="inline-flex items-center justify-center w-10 h-10 rounded-b-md bg-[#E87449] text-white mb-6"
         >
           ←
         </Link>
@@ -23,7 +23,7 @@ export default function CreatePassword() {
         {/* Progress dots */}
         <div className="flex justify-center gap-2 mb-8">
           <div className="w-3 h-3 rounded-full bg-gray-300" />
-          <div className="w-3 h-3 rounded-full bg-teal-500" />
+          <div className="w-3 h-3 rounded-full bg-[#E87449]" />
         </div>
 
         {/* Heading */}
@@ -121,7 +121,7 @@ export default function CreatePassword() {
             I agree to the{" "}
             <Link
               href="/terms-and-conditions"
-              className="text-teal-500 hover:underline"
+              className="text-[#E87449] hover:underline"
             >
               Terms and Conditions
             </Link>
@@ -129,7 +129,7 @@ export default function CreatePassword() {
         </div>
 
         {/* CTA */}
-        <button className="w-full bg-teal-600 text-white py-3 rounded-md font-semibold hover:bg-teal-700 transition">
+        <button className="w-full bg-[#E87449] text-white py-3 rounded-md font-semibold hover:bg-[#E87449] transition">
           Create Account
         </button>
       </div>

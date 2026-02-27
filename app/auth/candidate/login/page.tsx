@@ -55,7 +55,7 @@ export default function LoginPage() {
 
       <p className="text-left text-black mb-6">
         Don’t have an account?{" "}
-        <Link href="/auth/get-started" className="text-teal-400">
+        <Link href="/auth/candidate/get-started" className="text-teal-400">
           Create account
         </Link>
       </p>

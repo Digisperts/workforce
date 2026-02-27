@@ -5,14 +5,14 @@ export default function VerifyCode() {
     <section className="min-h-screen bg-white
      text-white px-6 py-8 max-w-md mx-auto">
 
-      <Link href="/auth/forgot-password" className="bg-[#339999] text-white text-6xl">
+      <Link href="/auth/employer/forgot-password" className="bg-[#E87449] text-white text-6xl">
         ←
       </Link>
 
       {/* Progress dots */}
       <div className="flex justify-center gap-2 my-6">
         <span className="w-3 h-3 bg-gray-400 rounded-full" />
-        <span className="w-3 h-3 bg-teal-500 rounded-full" />
+        <span className="w-3 h-3 bg-[#E87449] rounded-full" />
         <span className="w-3 h-3 bg-gray-400 rounded-full" />
       </div>
 
@@ -33,8 +33,8 @@ export default function VerifyCode() {
         ))}
       </div>
 
-      <Link href="/auth/new-password">
-        <button className="bg-teal-600 py-4 rounded-md font-semibold w-full">
+      <Link href="/auth/employer/new-password">
+        <button className="bg-[#E87449] py-4 rounded-md font-semibold w-full">
           Verify Code
         </button>
       </Link>

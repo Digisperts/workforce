@@ -4,7 +4,7 @@ export default function ForgotPassword() {
   return (
     <section className="min-h-screen bg-white text-white px-6 py-8 max-w-md mx-auto">
 
-      <Link href="/auth/login" className="text-teal-400 text-2xl">
+      <Link href="/auth/candidate/login" className="text-teal-400 text-2xl">
         ←
       </Link>
 
@@ -26,7 +26,7 @@ export default function ForgotPassword() {
         className="mb-6 p-4 rounded-md bg-gray-200 text-black w-full"
       />
 
-      <Link href="/auth/verify-code">
+      <Link href="/auth/candidate/verify-code">
         <button className="bg-teal-600 py-4 rounded-md font-semibold w-full">
           Verify Email
         </button>
