@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function GetStartedPage() {
   const [accountType, setAccountType] = useState<"candidate" | "employer">(
-    "candidate"
+    "employer"
   );
 
   return (
@@ -17,10 +17,10 @@ export default function GetStartedPage() {
     <div className="flex justify-center mb-6">
       <div className="flex bg-gray-200 p-1 rounded-full">
         <button
-          onClick={() => setAccountType("candidate")}
+          onClick={() => setAccountType("employer")}
           className={`px-5 py-2 text-sm rounded-full transition ${
-            accountType === "candidate"
-              ? "bg-[#008080] text-white"
+            accountType === "employer"
+              ? "bg-[#E87449] text-white"
               : "text-gray-600"
           }`}
         >
@@ -31,7 +31,7 @@ export default function GetStartedPage() {
           onClick={() => setAccountType("employer")}
           className={`px-5 py-2 text-sm rounded-full transition ${
             accountType === "employer"
-              ? "bg-[#008080] text-white"
+              ? "bg-[#E87449] text-white"
               : "text-gray-600"
           }`}
         >
@@ -42,7 +42,7 @@ export default function GetStartedPage() {
 
     {/* PROGRESS DOTS */}
     <div className="flex justify-center gap-2 mb-8">
-      <div className="w-3 h-3 rounded-full bg-teal-500" />
+      <div className="w-3 h-3 rounded-full bg-[#E87449]" />
       <div className="w-3 h-3 rounded-full bg-gray-300" />
     </div>
 
@@ -118,8 +118,8 @@ export default function GetStartedPage() {
 
         {/* CONTINUE CTA */}
         <Link
-          href="/auth/create-password"
-          className="block w-full mt-6 text-center py-3 rounded-md bg-[#008080] hover:bg-[#006666] transition font-semibold"
+          href="/auth/employer/create-password"
+          className="block w-full mt-6 text-center py-3 rounded-md bg-[#E87449] hover:bg-[#E87449] transition font-semibold"
         >
           Continue
         </Link>
@@ -129,7 +129,7 @@ export default function GetStartedPage() {
           Already have an account?{" "}
           <Link
             href="/auth/login"
-            className="text-teal-400 font-medium hover:underline"
+            className="text-[#E87449] font-medium hover:underline"
           >
             Login
           </Link>
