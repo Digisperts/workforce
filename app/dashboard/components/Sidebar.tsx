@@ -18,13 +18,13 @@ export default function Sidebar({
   const pathname = usePathname();
 
   const menus = [
-    { name: "Dashboard", href: "/dashboard", icon: "/images/sidebar/dashboard.png" },
-    { name: "My Profile", href: "/dashboard/profile", icon: "/images/sidebar/profile.png" },
-    { name: "My Applications", href: "/dashboard/applications", icon: "/images/sidebar/applications.png" },
-    { name: "Find Jobs", href: "/dashboard/jobs", icon: "/images/sidebar/jobs.png" },
-    { name: "Job Alerts", href: "/dashboard/alerts", icon: "/images/sidebar/alerts.png" },
-    { name: "Settings", href: "/dashboard/settings", icon: "/images/sidebar/settings.png" },
-    { name: "Skill Test", href: "/dashboard/skill-test", icon: "/images/sidebar/skill.png" },
+    { name: "Dashboard", href: "/candidate/dashboard", icon: "/images/sidebar/dashbaord.png" },
+    { name: "My Profile", href: "/dashboard/candidate/profile", icon: "/images/sidebar/profile.png" },
+    { name: "My Applications", href: "/dashboard/candidate/applications", icon: "/images/sidebar/app.png" },
+    { name: "Find Jobs", href: "/dashboard/candidate/jobs", icon: "/images/sidebar/jobs.png" },
+    { name: "Job Alerts", href: "/dashboard/candidate/alerts", icon: "/images/sidebar/alerts.png" },
+    { name: "Settings", href: "/dashboard/candidate/settings", icon: "/images/sidebar/settings.png" },
+    { name: "Skill Test", href: "/dashboard/candidate/skill-test", icon: "/images/sidebar/skill.png" },
   ];
 
   return (
@@ -41,13 +41,9 @@ export default function Sidebar({
         {/* LOGO + COLLAPSE */}
         <div className="flex items-center justify-between p-4">
           <div className="flex items-center gap-2">
-            <Image src="/images/logo.png" alt="Logo" width={40} height={40} />
+            <Image src="/images/sidebar/logo.png" alt="Logo" width={120} height={120} />
 
-            {!collapsed && (
-              <p className="text-sm font-semibold leading-tight">
-                Digisperts <br /> Workforce
-              </p>
-            )}
+
           </div>
 
           {/* DESKTOP COLLAPSE */}
@@ -83,10 +79,9 @@ export default function Sidebar({
                 onClick={isMobile ? close : undefined}
                 className={`
                   flex items-center gap-3 px-4 py-3 rounded-lg transition
-                  ${
-                    active
-                      ? "bg-[#0F766E] text-white"
-                      : "text-gray-500 hover:bg-gray-100"
+                  ${active
+                    ? "bg-[#0F766E] text-white"
+                    : "text-gray-500 hover:bg-gray-100"
                   }
                 `}
               >
