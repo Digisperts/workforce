@@ -28,14 +28,14 @@ export default function Topbar({
 
       {/* RIGHT */}
       <div className="flex items-center gap-4">
-        <Image src="/images/topbar/notification.png" alt="Bell" width={24} height={24} />
+        <Image src="/images/sidebar/alerts.png" alt="Bell" width={20} height={24} />
 
-        <div className="flex items-center gap-2 border rounded-lg px-2 py-1">
+        <div className="flex items-center gap-2  rounded-lg px-2 py-1">
           <Image
-            src="/images/topbar/avatar.png"
+            src="/images/sidebar/profile.png"
             alt="User"
-            width={32}
-            height={32}
+            width={20}
+            height={40}
             className="rounded-full"
           />
         </div>
