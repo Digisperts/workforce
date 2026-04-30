@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { Menu, Search } from "lucide-react";
 
 export default function Topbar({
   onMenuClick,
@@ -9,28 +10,39 @@ export default function Topbar({
 }) {
   return (
     <header className="flex items-center justify-between bg-white px-4 md:px-6 py-3 shadow-sm">
+      
       {/* LEFT */}
       <div className="flex items-center gap-3 w-full max-w-xl">
-        {/* HAMBURGER (MOBILE ONLY) */}
+        
+        {/* HAMBURGER */}
         <button onClick={onMenuClick} className="md:hidden text-xl">
-          ☰
+          <Menu size={22} />
         </button>
 
-        {/* SEARCH */}
-        <div className="flex items-center bg-gray-100 px-4 py-2 rounded-lg w-full">
+        {/* SEARCH (from first design, resized to match second) */}
+        <div className="flex items-center w-full h-[38px] gap-2 rounded-lg bg-[#f2f2f2] px-4">
+          <Search size={16} className="text-[#0f8a8d]" />
           <input
             type="text"
             placeholder="Search"
-            className="bg-transparent outline-none w-full text-sm"
+            className="w-full bg-transparent text-sm text-[#8e8e8e] outline-none placeholder:text-[#a3a3a3]"
           />
         </div>
       </div>
 
-      {/* RIGHT */}
+      {/* RIGHT (from second design) */}
       <div className="flex items-center gap-4">
-        <Image src="/images/sidebar/alerts.png" alt="Bell" width={20} height={24} />
+        
+        {/* NOTIFICATION ICON */}
+        <Image
+          src="/images/sidebar/alerts.png"
+          alt="Bell"
+          width={20}
+          height={24}
+        />
 
-        <div className="flex items-center gap-2  rounded-lg px-2 py-1">
+        {/* PROFILE */}
+        <div className="flex items-center gap-2 rounded-lg px-2 py-1">
           <Image
             src="/images/sidebar/profile.png"
             alt="User"
