@@ -13,7 +13,7 @@ interface JobCardProps {
 export default function JobCards({ id, title, company }: JobCardProps) {
   return (
     <div className="relative bg-white border rounded-xl p-5 shadow-sm hover:shadow-md transition">
-      
+
       {/* Top-right icons */}
       <div className="absolute top-4 right-4 flex gap-3">
         <FiArchive className="w-5 h-5 text-gray-500 cursor-pointer hover:text-gray-700" />
