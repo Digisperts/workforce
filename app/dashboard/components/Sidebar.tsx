@@ -30,7 +30,7 @@ export default function Sidebar({
   return (
     <aside
       className={`
-        h-full bg-white flex flex-col justify-between shadow-sm
+        h-screen overflow-y-auto bg-white flex flex-col justify-between shadow-sm
         transition-all duration-300
         ${collapsed ? "w-20" : "w-[260px]"}
         ${isMobile ? "fixed top-0 left-0 z-50" : "hidden md:flex"}
@@ -83,10 +83,9 @@ export default function Sidebar({
                 onClick={isMobile ? close : undefined}
                 className={`
                   flex items-center gap-3 px-4 py-3 rounded-lg transition
-                  ${
-                    active
-                      ? "bg-[#0F766E] text-white"
-                      : "text-gray-500 hover:bg-gray-100"
+                  ${active
+                    ? "bg-[#0F766E] text-white"
+                    : "text-gray-500 hover:bg-gray-100"
                   }
                 `}
               >
@@ -116,7 +115,6 @@ export default function Sidebar({
             <p className="text-xs mb-3">
               Get 1 month free trial and unlock your dream role
             </p>
-
             <button className="w-full bg-white text-[#0F766E] py-2 rounded-md text-sm font-semibold">
               Upgrade Now
             </button>

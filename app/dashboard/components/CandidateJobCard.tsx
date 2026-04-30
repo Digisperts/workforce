@@ -21,10 +21,10 @@ export default function CandidateJobCard({ job }: { job: JobCardProps }) {
                     <img src={job.img} alt={job.company} className="w-10 h-10 object-contain" />
                     <div className="flex flex-col">
                         <span className="font-semibold text-sm text-gray-800">{job.company}</span>
-                        <span className="text-xs text-gray-400">{job.location}</span>
+                        <span className="text-xs text-gray-600">{job.location}</span>
                     </div>
                 </div>
-                <div className="flex items-center gap-2 text-gray-300">
+                <div className="flex items-center gap-2 text-gray-800 font-bold">
                     <BookmarkIcon className="w-4 h-4 cursor-pointer hover:text-teal-600" />
                     <HeartIcon className="w-4 h-4 cursor-pointer hover:text-red-400" />
                 </div>
@@ -34,12 +34,17 @@ export default function CandidateJobCard({ job }: { job: JobCardProps }) {
             <h2 className="font-bold text-base text-gray-800">{job.role}</h2>
 
             {/* ── Description ── */}
-            <p className="text-xs text-gray-500 line-clamp-3">{job.description}</p>
+            <p className="text-xs text-gray-500 overflow-hidden display-webkit-box" style={{
+                display: '-webkit-box',
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden'
+            }}>{job.description}</p>
 
             {/* ── Tags ── */}
             <div className="flex gap-2">
-                <span className="bg-gray-100 border border-gray-100 text-[#004646] font-medium text-sm px-2 py-1">{job.positions}</span>
-                <span className="bg-gray-100 border border-gray-100 text-[#004646] font-medium text-sm px-2 py-1 ">{job.type}</span>
+                <span className="bg-gray-100 border border-gray-100 text-[#004646] font-medium rounded-md text-xs px-2 py-1">{job.positions}</span>
+                <span className="bg-gray-100 border border-gray-100 text-[#004646] font-medium rounded-md text-xs px-2 py-1 ">{job.type}</span>
             </div>
 
             {/* ── Buttons ── */}
