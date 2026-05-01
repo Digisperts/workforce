@@ -32,7 +32,7 @@ export default function OrganizationLayout({ children }: LayoutProps) {
               </div>
 
               <nav className="space-y-3 text-sm">
-                <a href="/dashboard/organization/settings" className=" block text-[#8C462C] font-medium">
+                <a href="/dashboard/organization" className=" block text-[#8C462C] font-medium">
                   Account
                 </a>
                 <a href="/dashboard/organization/billing" className="block text-[#8C462C]  hover:underline">
@@ -72,7 +72,7 @@ export default function OrganizationLayout({ children }: LayoutProps) {
             <h2 className="text-lg font-semibold mb-6">Settings</h2>
 
             <nav className="space-y-3 mb-10 text-xl font-medium">
-              <a href="/dashboard/organization/settings" className="block text-[#8C462C] ">
+              <a href="/dashboard/organization" className="block text-[#8C462C] ">
                 Account
               </a>
               <a href="/dashboard/organization/billing" className="block text-[#8C462C]  hover:underline">
