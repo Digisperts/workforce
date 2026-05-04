@@ -9,7 +9,12 @@ interface LayoutProps {
 
 export default function OrganizationLayout({ children }: LayoutProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const isPremium = false;
+
+
+
+  const isPremium = true; //change into false to test
+
+
 
   return (
     <OrgContext.Provider value={{ isPremium }}>
